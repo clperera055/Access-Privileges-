@@ -15,7 +15,7 @@ public class EmployeeController {
     @GetMapping("/employee-details")
     @PreAuthorize("hasAnyRole ('ADMIN','EMPLOYEE')")
     public String payrollDetails(){
-        String val = "sddsdsf";
+
         return "Here's the employee details....";
     }
 
