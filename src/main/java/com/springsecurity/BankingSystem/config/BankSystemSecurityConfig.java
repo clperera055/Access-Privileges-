@@ -19,8 +19,7 @@ public class BankSystemSecurityConfig {
         security.csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/api/v1/notices/notice-details", "/api/v1/signup/register").permitAll()
-                /*.antMatchers("/api/v1/employee/employee-details").hasAnyRole("EMPLOYEE", "ADMIN")*/
-                .antMatchers("/api/v1/employee/employee-details").authenticated()
+                .antMatchers("/api/v1/employee/employee-details").hasAnyRole("EMPLOYEE", "ADMIN")
                 .antMatchers("/api/v1/account/account-details").hasAnyRole("ACCOUNTANT", "ADMIN")
                 .and().formLogin().and().httpBasic();
         return security.build();
